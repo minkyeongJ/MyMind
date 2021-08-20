@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0" />
+    <title>VIP</title>
+
+	<style>
+		/* base */
+		/* 요소(element) 여백 초기화  */
+		html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure, figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{word-wrap:break-word;margin:0;padding:0;border:0}
+		article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+		html {-webkit-text-size-adjust: none;} 
+		
+		/* button 초기화 */
+		button{border:0; vertical-align:middle; cursor:pointer; -webkit-appearance:none; background:transparent;}
+		button::-moz-focus-inner {padding:0; border:0; }
+
+		/* ios input 버튼초기화 */
+		input {-webkit-appearance: none; -moz-appearance: none; appearance: none;-webkit-border-radius: 0; border:none;}
+		input::-ms-clear { display: none; }
+		input:focus {outline:0;}
+		input:-webkit-autofill {background-color:transparent !important; -webkit-box-shadow: 0 0 0px 1000px white inset !important;}
+
+		/* join */
+		.cont_join{height: 100vh; background: url("images/bg_join.png") center no-repeat; background-size: cover;}
+
+		.cont_join .cont{max-width: 300px; margin:0 auto; margin-top: 130px;}
+		.cont_join .cont h2{margin-bottom:20px; font-size:30px; color: #fff; text-align: center;}
+		.cont_join .cont input[type="text"],
+		.cont_join .cont input[type="password"]{width: 100%; padding:13px 10px 13px 14px; background-color: #fff; border-bottom:1px solid #e8e8e8; font-size:15px;  box-sizing: border-box;}
+		.cont_join .cont input:first-child{border-radius: 5px 5px 0 0;}
+		.cont_join .cont input:last-child{border-radius: 0 0 5px 5px; border-bottom: none;}
+		.cont_join .cont input[type="text"]::placeholder,
+		.cont_join .cont input[type="password"]::placeholder{font-size: 15px; color: #888;}
+		.cont_join .cont .btn_join{display: block; position:relative; width:100%; margin-top: 20px; padding:15px 0; border: 2px solid #FFF; color: #fff; font-size: 20px; text-align: center; font-weight: 600; z-index: 10;}
+		.cont_join .cont .btn_join:before{display:block; content:""; position:absolute; left:0; top:0; width:0; height:100%; background-color:#fff; transition:0.3s; z-index: -1;}
+
+		.cont_join .cont .btn_join:hover{text-decoration: none; color:#06061d;}
+		.cont_join .cont .btn_join:hover:before{width:100%;}
+	</style>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Palette+Mosaic&family=STIX+Two+Text:ital,wght@0,400;1,700&family=Zeyada&display=swap" rel="stylesheet">
+</head>
+<body>
+
+	<div class="wrapper cont_join">
+	
+		<!-- header -->
+		<header>
+			<div class="header j_header">
+				<h1><a href="main.html">MyMind</a></h1>
+				<a href="login.html"><img src="images/login.PNG"><br>login</a>
+			</div>
+		</header>
+		<!-- header -->
+
+		<!-- contents -->
+		<div class="cont">
+			<h2>회원가입</h2>
+			<form action="joinOk" method="post" name="regFrm">
+				<div class="join_form">
+					<input type="text" name="id" placeholder="아이디" />				
+					<input type="password" name="pw" placeholder="비밀번호" />
+					<input type="password" name="pwCh" placeholder="비밀번호 확인" />
+					<input type="text" name="name" placeholder="이름" />
+					<input type="text" name="email" placeholder="이메일 ex)abc@google.com" />
+				</div>
+				<button type="button" class="btn_join" onclick="inputCheck()">JOIN</button>
+			</form>
+		</div>
+		<!-- contents -->
+
+		<!-- footer -->
+		<footer>
+			<p></p>
+		</footer>
+		<!-- footer -->
+
+	</div>
+
+</body>
+</html>

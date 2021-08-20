@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/test_mind.css">
+    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Palette+Mosaic&family=STIX+Two+Text:ital,wght@0,400;1,700&family=Zeyada&display=swap" rel="stylesheet">
+    <script>
+        $(document).ready(function(){
+            $("#resultBox").hide();
+        });
+        
+        
+        function viewResult(){
+            var sum = 0;
+            var inp = document.getElementsByTagName("input");
+            for( var i=0; i<inp.length; i++ ){
+                if( inp[i].type=="radio" ){
+                    if( !document.getElementsByName(inp[i].name)[0].checked
+                     && !document.getElementsByName(inp[i].name)[1].checked
+                     && !document.getElementsByName(inp[i].name)[2].checked
+                     && !document.getElementsByName(inp[i].name)[3].checked
+                    ){
+                        alert(inp[i].name.replace(/Q/gi,"")+"번 질문의 답을 선택해 주세요.");
+                        inp[i].focus();
+                        return;
+                    }
+                    if( inp[i].checked ){
+                        sum += Number(inp[i].value);
+                        
+                    }
+                }		
+            }
+            
+            $("#resultBox").show();
+            
+            
+            for(var i=1; i<=4; i++){
+                $("#menu"+i).hide();
+            }
+            $("#sum").html("<h4>당신의 테스트 결과 점수는 : <strong class='fcR fs16'>"+sum+"점</strong> 입니다.</h4>");
+            if( sum >= 0 && sum <= 4 ){
+                $("#menu1").show();
+            }else if( sum >= 5 && sum <= 9 ){
+                $("#menu2").show();
+            }else if( sum >= 10 && sum <= 19 ){
+                $("#menu3").show();
+            }else if( sum >= 20 && sum <= 27 ){
+                $("#menu4").show();
+            }
+    
+        }	
+    </script>
+</head>
+<body>
+    <header>
+        <h1>MyMind</h1>
+        <a href="#"><img class="login-success" src="images/login-success.png"></a>
+    </header>
+    <main>
+        <div class="main-container wrapper">
+            <div class="nav">
+                <ul>
+                    <!--current를 활용하면 현재 페이지에 색을 다르게 할 수 있음-->
+                    <li><a href="test_memo.html">심리 테스트 메모</a></li>
+                    <div class="dropdown">
+                        <li><a class="current dropdown-button" href="test_mind.html">현재 마음 상태 검사하기</a></li>
+                        <div class="dropdown-content">
+                            <a href="test_mind_depression.html">우울</a>
+                            <a href="test_mind_unrest.html">불안</a>
+                            <a href="test_mind_suicide.html">자살</a>
+                            <a href="test_mind_stress.html">스트레스</a>
+                        </div>
+                    </div>
+                    <li><a href="introduce_site.html">무료 상담 사이트</a></li>
+                    <li><a href="recommend_video.html">마음을 달래줄 영상</a></li>
+                </ul>
+            </div>
+            <div class="test-page wrapper">
+                <!--제출을 누르면 action에 지정한 경로로 간다-->
+                <form action="" method="get">
+                <!-- get : 도메인쪽에 내가 입력한 것이 붙어서 서버쪽으로 가는 것 -->
+                <!-- post: 정보은닉이 되어 서버쪽으로 가는 것 -->
+                <section class="content">
+                    <h4 class="mt20">불안 자가진단</h4>
+			<p class="l20">불안은 우리 생존을 위해 필요한 적응적 반응이라 할 수 있지만 지나치게 심한 불안은 일상생활의 불편을 가져올 수 있습니다.<br />
+				여러분은 생활 속에서 불안을 얼마나 느끼시나요? 지난 2주 동안 다음과 같은 문제를 얼마나 자주 겪었는지 해당되는 곳에 체크하세요.</p>
+			<table class="tblType02 mt25">
+				<caption>자가체크 리스트</caption>
+				<colgroup>
+					<col style="width:8%">
+					<col>
+					<col style="width:10%">
+					<col style="width:10%">
+					<col style="width:10%">
+					<col style="width:10%">
+				</colgroup>
+				<thead>
+					<tr>
+						<th>문항</th>
+						<th>지난 2주 동안</th>
+						<th>전혀<br /> 없음</th>
+						<th>며칠<br /> 동안</th>
+						<th>1주일<br /> 이상</th>
+						<th>거의<br /> 매일</th>
+					</tr>
+				</thead>
+				<tbody>
+                <tr>
+                    <td>1</td>
+                    <td class="al">초조하거나 불안하거나 조마조마하게 느낀다.</td>
+                    <td><input type="radio" name="Q1" id="Q1_0" value="0"/></td>
+                    <td><input type="radio" name="Q1" id="Q1_1" value="1"/></td>
+                    <td><input type="radio" name="Q1" id="Q1_2" value="2"/></td>
+                    <td><input type="radio" name="Q1" id="Q1_3" value="3"/></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td class="al">걱정하는 것들을 멈추거나 조절할 수가 없다.</td>
+                    <td><input type="radio" name="Q2" id="Q2_0" value="0"/></td>
+                    <td><input type="radio" name="Q2" id="Q2_1" value="1"/></td>
+                    <td><input type="radio" name="Q2" id="Q2_2" value="2"/></td>
+                    <td><input type="radio" name="Q2" id="Q2_3" value="3"/></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td class="al">여러 가지 것들에 대해 걱정을 너무 많이 한다.</td>
+                    <td><input type="radio" name="Q3" id="Q3_0" value="0"/></td>
+                    <td><input type="radio" name="Q3" id="Q3_1" value="1"/></td>
+                    <td><input type="radio" name="Q3" id="Q3_2" value="2"/></td>
+                    <td><input type="radio" name="Q3" id="Q3_3" value="3"/></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td class="al">편하게 있기가 어렵다.</td>
+                    <td><input type="radio" name="Q4" id="Q4_0" value="0"/></td>
+                    <td><input type="radio" name="Q4" id="Q4_1" value="1"/></td>
+                    <td><input type="radio" name="Q4" id="Q4_2" value="2"/></td>
+                    <td><input type="radio" name="Q4" id="Q4_3" value="3"/></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td class="al">너무 안절부절못해서 가만히 있기가 힘들다.</td>
+                    <td><input type="radio" name="Q5" id="Q5_0" value="0"/></td>
+                    <td><input type="radio" name="Q5" id="Q5_1" value="1"/></td>
+                    <td><input type="radio" name="Q5" id="Q5_2" value="2"/></td>
+                    <td><input type="radio" name="Q5" id="Q5_3" value="3"/></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td class="al">쉽게 짜증이 나거나 쉽게 성을 내게 된다.</td>
+                    <td><input type="radio" name="Q6" id="Q6_0" value="0"/></td>
+                    <td><input type="radio" name="Q6" id="Q6_1" value="1"/></td>
+                    <td><input type="radio" name="Q6" id="Q6_2" value="2"/></td>
+                    <td><input type="radio" name="Q6" id="Q6_3" value="3"/></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td class="al">마치 끔찍한 일이 생길 것처럼 두렵게 느껴진다.</td>
+                    <td><input type="radio" name="Q7" id="Q7_0" value="0"/></td>
+                    <td><input type="radio" name="Q7" id="Q7_1" value="1"/></td>
+                    <td><input type="radio" name="Q7" id="Q7_2" value="2"/></td>
+                    <td><input type="radio" name="Q7" id="Q7_3" value="3"/></td>
+                </tr>
+				</tbody>
+			</table>
+			<p class="l20">※ 출처<br />
+				- Spitzer RL, Kroenke K, Williams JB, et al.(2006). A brief measure for assessing generalized anxiety disorder: the GAD-7, Arch Intern Med 166, 1092-7<br />
+				- <a href="https://www.phqscreeners.com/" target="_blank" title="새창열기">www.phqscreeners.com</a>
+			</p>
+			<div class="ac t35"><a href="javascript:viewResult();" id="result"><img src="/images/headquarter/counsel/btn/btn_result.png" alt="결과보기"/></a></div>
+			<div id="resultBox" class="t35">
+				<div id="sum"></div>
+				<p class="blt01">점수별 평가 결과</p>
+				<div class="l20">
+					<table class="tblType01 mt05">
+						<caption>점수별 평가 결과</caption>
+						<colgroup>
+							<col style="width:15%">
+							<col>
+						</colgroup>
+						<tbody>
+							<!-- 점수에 따라서 해당 tr이 활성화 되게 해 주세요. (hide 클래스 삭제 하시면 활성화 됩니다.)  -->
+							<tr id="menu1">
+								<th>0 ~ 4점</th>
+								<td>정상적인 수준의 불안을 경험하고 있습니다.</td>
+							</tr>
+							<tr  id="menu2">
+								<th>5 ~ 9점</th>
+								<td>가벼운 정도의 불안을 경험하고 있습니다. 심각한 문제는 아니지만 좀 더 안정을 취할 방법을 강구해 보십시오.</td>
+							</tr>
+							<tr id="menu3">
+								<th>10 ~ 14점</th>
+								<td>상당한 정도의 불안을 경험하고 있습니다. 정서적인 안정감이 부족하고 일상생활에도 어려움을 겪고 있을 수 있으므로 전문가의 도움이 필요합니다.</td>
+							</tr>
+							<tr id="menu4">
+								<th>15 ~ 21점</th>
+								<td>심한 불안을 경험하고 있습니다. 거의 항상 불안하여 정상적으로 일상생활을 해나가는 데 어려움을 경험할 것 같습니다.
+									이미 도움을 요청했을 수도 있지만, 그렇지 않다면 가능한 한 조속한 시일 내에 전문가를 통해 상담 받을 것을 권합니다.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+                </section>
+            </section>
+                </form>
+                
+                <div class="test">
+                   
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

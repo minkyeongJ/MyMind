@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyMind</title>
+    <link rel="stylesheet" href="css/test_memo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Palette+Mosaic&family=STIX+Two+Text:ital,wght@0,400;1,700&family=Zeyada&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="test-memo-win">
+        <p><input type="file" id="image" accept="image/*" onchange="setThumbnail(event);" name="uploadFile"></p>
+        <div id="image_container"></div>
+        <script> 
+            function setThumbnail(event) { 
+                var reader = new FileReader(); reader.onload = function(event) { 
+                    var img = document.createElement("img"); 
+                    img.setAttribute("src", event.target.result); 
+                    document.querySelector("div#image_container").appendChild(img); 
+                }; 
+                reader.readAsDataURL(event.target.files[0]); 
+            } 
+        </script><br>
+        <p>
+            <input type="radio" name="heart">🤍
+            <input type="radio" name="heart">🧡
+        </p><br>
+        <input type="submit" value="등록!" name="add-box" onclick="close();">
+    </div>
+</body>
+</html>

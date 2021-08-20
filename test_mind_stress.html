@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/test_mind.css">
+    <link rel="stylesheet" href="css/navigation.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Palette+Mosaic&family=STIX+Two+Text:ital,wght@0,400;1,700&family=Zeyada&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>MyMind</h1>
+		<a href="#"><img class="login-success" src="images/login-success.png"></a>
+    </header>
+    <main>
+        <div class="main-container wrapper">
+            <div class="nav">
+                <ul>
+                    <!--current를 활용하면 현재 페이지에 색을 다르게 할 수 있음-->
+                    <li><a href="test_memo.html">심리 테스트 메모</a></li>
+                    <div class="dropdown">
+                        <li><a class="current dropdown-button" href="test_mind.html">현재 마음 상태 검사하기</a></li>
+                        <div class="dropdown-content">
+                            <a href="test_mind_depression.html">우울</a>
+                            <a href="test_mind_unrest.html">불안</a>
+                            <a href="test_mind_suicide.html">자살</a>
+                            <a href="test_mind_stress.html">스트레스</a>
+                        </div>
+                    </div>
+                    <li><a href="introduce_site.html">무료 상담 사이트</a></li>
+                    <li><a href="recommend_video.html">마음을 달래줄 영상</a></li>
+                </ul>
+            </div>
+            <div class="test-page wrapper">
+                <!--제출을 누르면 action에 지정한 경로로 간다-->
+                <form action="" method="get">
+                <!-- get : 도메인쪽에 내가 입력한 것이 붙어서 서버쪽으로 가는 것 -->
+                <!-- post: 정보은닉이 되어 서버쪽으로 가는 것 -->
+                <section class="content">
+                    <h4 class="mt20">스트레스 자가진단</h4>
+			<p class="l20">다음의 문항들은 최근 1개월 동안 당신이 느끼고 생각한 것에 대한 것입니다. 각 문항에 해당하는 내용을 얼마나 자주 느꼈는지 표기해 주십시오.</p>
+			<table class="tblType02 mt10">
+				<caption>자가체크 리스트 문항 점수</caption>
+				<colgroup>
+					<col style="width:20%">
+					<col style="width:20%">
+					<col style="width:20%">
+					<col style="width:20%">
+					<col style="width:20%">
+				</colgroup>
+				<tbody>
+				<tr>
+					<td><strong>0 전혀 없었다.</strong></td>
+					<td><strong>1 거의 없었다.</strong></td>
+					<td><strong>2 때때로 있었다.</strong></td>
+					<td><strong>3 자주 있었다.</strong></td>
+					<td><strong>4 매우 자주 있었다.</strong></td>
+				</tr>
+				</tbody>
+			</table>
+			<table class="tblType02 mt10">
+				<caption>자가체크 리스트</caption>
+				<colgroup>
+					<col style="width:8%">
+					<col>
+					<col style="width:7%">
+					<col style="width:7%">
+					<col style="width:7%">
+					<col style="width:7%">
+					<col style="width:7%">
+				</colgroup>
+				<thead>
+				<tr>
+					<th>문항</th>
+					<th>질문</th>
+					<th>0</th>
+					<th>1</th>
+					<th>2</th>
+					<th>3</th>
+					<th>4</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td>1</td>
+					<td class="al">최근 1개월 동안, 예상치 못했던 일 때문에 당황했던 적이 얼마나 있었습니까?</td>
+					<td><input type="radio" name="Q1" id="Q1_0" value="0"/></td>
+					<td><input type="radio" name="Q1" id="Q1_1" value="1"/></td>
+					<td><input type="radio" name="Q1" id="Q1_2" value="2"/></td>
+					<td><input type="radio" name="Q1" id="Q1_3" value="3"/></td>
+					<td><input type="radio" name="Q1" id="Q1_4" value="4"/></td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td class="al">최근 1개월 동안, 인생에서 중요한 일들을 조절할 수 없다는 느낌을 얼마나 경험하였습니까?</td>
+					<td><input type="radio" name="Q2" id="Q2_0" value="0"/></td>
+					<td><input type="radio" name="Q2" id="Q2_1" value="1"/></td>
+					<td><input type="radio" name="Q2" id="Q2_2" value="2"/></td>
+					<td><input type="radio" name="Q2" id="Q2_3" value="3"/></td>
+					<td><input type="radio" name="Q2" id="Q2_4" value="4"/></td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td class="al">최근 1개월 동안, 신경이 예민해지고 스트레스를 받고 있다는 느낌을 얼마나 경험하였습니까?</td>
+					<td><input type="radio" name="Q3" id="Q3_0" value="0"/></td>
+					<td><input type="radio" name="Q3" id="Q3_1" value="1"/></td>
+					<td><input type="radio" name="Q3" id="Q3_2" value="2"/></td>
+					<td><input type="radio" name="Q3" id="Q3_3" value="3"/></td>
+					<td><input type="radio" name="Q3" id="Q3_4" value="4"/></td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td class="al">최근 1개월 동안, 당신의 개인적 문제들을 다루는 데 있어서 얼마나 자주 자신감을 느꼈습니까?</td>
+					<td><input type="radio" name="Q4" id="Q4_0" value="4"/></td>
+					<td><input type="radio" name="Q4" id="Q4_1" value="3"/></td>
+					<td><input type="radio" name="Q4" id="Q4_2" value="2"/></td>
+					<td><input type="radio" name="Q4" id="Q4_3" value="1"/></td>
+					<td><input type="radio" name="Q4" id="Q4_4" value="0"/></td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td class="al">최근 1개월 동안, 일상의 일들이 당신의 생각대로 진행되고 있다는 느낌을 얼마나 경험하였습니까?</td>
+					<td><input type="radio" name="Q5" id="Q5_0" value="4"/></td>
+					<td><input type="radio" name="Q5" id="Q5_1" value="3"/></td>
+					<td><input type="radio" name="Q5" id="Q5_2" value="2"/></td>
+					<td><input type="radio" name="Q5" id="Q5_3" value="1"/></td>
+					<td><input type="radio" name="Q5" id="Q5_4" value="0"/></td>
+				</tr>
+				<tr>
+					<td>6</td>
+					<td class="al">최근 1개월 동안, 당신이 꼭 해야 하는 일을 처리할 수 없다고 생각한 적이 얼마나 있었습니까?</td>
+					<td><input type="radio" name="Q6" id="Q6_0" value="0"/></td>
+					<td><input type="radio" name="Q6" id="Q6_1" value="1"/></td>
+					<td><input type="radio" name="Q6" id="Q6_2" value="2"/></td>
+					<td><input type="radio" name="Q6" id="Q6_3" value="3"/></td>
+					<td><input type="radio" name="Q6" id="Q6_4" value="4"/></td>
+				</tr>
+				<tr>
+					<td>7</td>
+					<td class="al">최근 1개월 동안, 일상생활의 짜증을 얼마나 자주 잘 다스릴 수 있었습니까?</td>
+					<td><input type="radio" name="Q7" id="Q7_0" value="4"/></td>
+					<td><input type="radio" name="Q7" id="Q7_1" value="3"/></td>
+					<td><input type="radio" name="Q7" id="Q7_2" value="2"/></td>
+					<td><input type="radio" name="Q7" id="Q7_3" value="1"/></td>
+					<td><input type="radio" name="Q7" id="Q7_4" value="0"/></td>
+				</tr>
+				<tr>
+					<td>8</td>
+					<td class="al">최근 1개월 동안, 최상의 컨디션이라고 얼마나 자주 느끼셨습니까?</td>
+					<td><input type="radio" name="Q8" id="Q8_0" value="4"/></td>
+					<td><input type="radio" name="Q8" id="Q8_1" value="3"/></td>
+					<td><input type="radio" name="Q8" id="Q8_2" value="2"/></td>
+					<td><input type="radio" name="Q8" id="Q8_3" value="1"/></td>
+					<td><input type="radio" name="Q8" id="Q8_4" value="0"/></td>
+				</tr>
+				<tr>
+					<td>9</td>
+					<td class="al">최근 1개월 동안, 당신이 통제할 수 없는 일 때문에 화가 난 경험이 얼마나 있었습니까?</td>
+					<td><input type="radio" name="Q9" id="Q9_0" value="0"/></td>
+					<td><input type="radio" name="Q9" id="Q9_1" value="1"/></td>
+					<td><input type="radio" name="Q9" id="Q9_2" value="2"/></td>
+					<td><input type="radio" name="Q9" id="Q9_3" value="3"/></td>
+					<td><input type="radio" name="Q9" id="Q9_4" value="4"/></td>
+				</tr>
+				<tr>
+					<td>10</td>
+					<td class="al">최근 1개월 동안, 어려운 일들이 너무 많이 쌓여서 극복하지 못할 것 같은 느낌을 얼마나 자주 경험하셨습니까?</td>
+					<td><input type="radio" name="Q10" id="Q10_0" value="0"/></td>
+					<td><input type="radio" name="Q10" id="Q10_1" value="1"/></td>
+					<td><input type="radio" name="Q10" id="Q10_2" value="2"/></td>
+					<td><input type="radio" name="Q10" id="Q10_3" value="3"/></td>
+					<td><input type="radio" name="Q10" id="Q10_4" value="4"/></td>
+				</tr>
+				</tbody>
+			</table>
+			<p class="l20">※ 출처<br />
+				- 이종하, 신철민, 고영훈, 임재형, 조숙행, 김승현, 정인과, 한창수(2012). 한글판 스트레스 자각척도의 신뢰도와 타당도 연구. 정신신체의학 20(2): 127-134
+			</p>
+			<div class="ac t35"><a href="javascript:viewResult();" id="result"><img src="/images/headquarter/counsel/btn/btn_result.png" alt="결과보기"/></a></div>
+			<div id="resultBox" class="t35">
+				<div id="sum"></div>
+				<p class="blt01">점수별 평가 결과</p>
+				<div class="l20">
+					<table class="tblType01 mt05">
+						<caption>점수별 평가 결과</caption>
+						<colgroup>
+							<col style="width:15%">
+							<col>
+						</colgroup>
+						<tbody>
+						<tr id="menu1">
+							<th>13점 이하</th>
+							<td>정상적인 스트레스 상태입니다.</td>
+						</tr>
+						<tr  id="menu2">
+							<th>14 ~ 16점</th>
+							<td>경도의 스트레스 상태입니다. 스트레스의 영향을 조금 받고 있는 상태입니다. 스트레스를 줄이고 긍정적인 경험을 하는 등 스트레스 관리가 필요합니다. </td>
+						</tr>
+						<tr id="menu3">
+							<th>17 ~ 18점</th>
+							<td>중등도의 스트레스 상태입니다. 지속적인 스트레스는 우울, 불안 등 정신적인 어려움으로 이어질 수 있으므로, 적극적으로 스트레스 관리를 하는 것이 필요합니다. </td>
+						</tr>
+						<tr id="menu4">
+							<th>19점 이상</th>
+							<td>심한 스트레스 상태입니다. 적극적인 스트레스 관리가 필요하며 혼자서 해결하기 어려울 수 있으므로 전문가의 도움을 적극적으로 받으시기 바랍니다. </td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+                </section>
+            </section>
+                </form>
+                
+                <div class="test">
+                   
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
