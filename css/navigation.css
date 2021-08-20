@@ -1,0 +1,71 @@
+/*전체*/
+.main-container {
+    margin: auto;
+    display: flex;
+    grid-template-columns: 250px 0px; /* 각 행(세로줄)의 길이 */
+}
+header{
+    text-align: center;
+    margin-top: 5rem;
+}
+h1{
+    font-size: 3rem;
+    font-family: 'Zeyada', cursive
+}
+.login-success{
+    width: 3rem;
+    border-radius: 70%
+}
+/*메뉴바*/
+.nav{
+    margin-right: 2rem;
+}
+ul{
+    background-color: #f4f3ef;
+    width: 230px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border: solid 1px white; /*메뉴 간 경계선 표현*/  
+}
+li a{
+    display: block;
+    color: #000000;
+    padding: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    
+}
+li a:hover{
+    background-color: #9093a2;
+    color: white;
+}
+/*현재 위치에 색 다르게 하기*/
+li a.current{
+    background-color: #6b6072;
+    color: white;
+}
+li a:hover:not(.curent){
+    background-color: #9093a2;
+    color: white;
+}
+/*드롭다운*/
+.dropdown{position: relative; display: grid;}
+.dropdown-content{
+    display: none;
+    position: absolute;
+    background-color: #f4f3ef;
+    min-width: 160px;
+    margin-left: 220px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+.dropdown-content a{
+    color:black;
+    padding: 8px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {background-color: #9093a2;}
+.dropdown:hover .dropdown-content{display: block;}
+.dropdown:hover{background-color: #9093a2;}

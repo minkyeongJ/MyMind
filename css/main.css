@@ -1,0 +1,45 @@
+body{
+  background-image: url('../images/main-bg1-1.jpg');
+  background-size: cover;
+}
+#main_header{
+  margin: 0 auto;
+  margin-top: 5rem;
+  text-align: center;
+}
+#main_header img{
+  width: 3rem;
+}
+#main_container{
+  margin: auto;
+  text-align: center;
+  margin-top: 8rem;
+}
+h1{
+  font-size: 3rem;
+  font-family: 'Zeyada', cursive
+}
+
+/* 버튼 */
+a.main_btn{
+  display:inline-block;
+  width:15rem;
+  height: 10rem;
+  line-height:30px;
+  text-align:center;
+  background-color:#222;
+  color:#fff;
+  margin: 0 auto;
+  vertical-align: middle;
+  padding-top: 7rem;
+  border-radius: 15px;
+  text-decoration: none;
+}
+a.main_btn:focus {
+	outline:0;
+}
+a.main_btn:hover{
+	background: rgba(0,79,255,0.9);
+	cursor: pointer;
+	box-shadow: 0 2px 4px rgba(0,79,255,0.6);
+}

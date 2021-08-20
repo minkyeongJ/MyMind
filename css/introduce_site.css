@@ -1,0 +1,26 @@
+.site-content{
+    margin: auto;
+    display: inline-flex;
+    text-align: center;
+    padding-left: 3rem;
+}
+.site{
+    background-color: slategrey;
+    border-radius: 3rem;
+    margin: 1rem;
+    margin-top: 100px;
+}
+.site a{
+    text-decoration: none;
+    color: seashell;
+}
+.site img{
+    height: 270px;
+    border-top-left-radius: 3rem;
+    border-top-right-radius: 3rem;
+}
+
+main{
+    background: #f2f4f7;
+    min-height: 700px;
+}

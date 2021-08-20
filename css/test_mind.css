@@ -1,0 +1,68 @@
+.main-container {
+  margin: auto;
+  display: unset;
+}
+/*-------------------메인-----------------*/
+#test_main_body{
+  background-image: url('../images/main-bg1-1.jpg');
+  background-size: cover;
+}
+#test_mind_main{
+  margin: auto;
+  text-align: center;
+
+  width: max-content;
+}
+/* 버튼 */
+a.main_btn{
+  display:inline-block;
+  width:15rem;
+  height: 10rem;
+  line-height:30px;
+  text-align:center;
+  background-color:#222;
+  color:#fff;
+  margin: 0 auto;
+  vertical-align: middle;
+  padding-top: 7rem;
+  border-radius: 15px;
+  text-decoration: none;
+}
+a.main_btn:focus {
+	outline:0;
+}
+a.main_btn:hover{
+	background: rgba(255, 102, 0, 0.9);
+	cursor: pointer;
+	box-shadow: 0 2px 4px rgba(255, 102, 0, 0.9);
+}
+/*-------------------테스트 페이지-----------------*/
+.content{
+    width: 1500px;
+}
+table{
+    display: inline-block;
+    border-collapse: collapse;
+    text-align: left;
+    line-height: 1.5;
+    border-top: 1px solid #ccc;
+    border-left: 3px solid #369;
+    margin : 20px 10px;
+  }
+table th {
+    width: 147px;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    color: #153d73;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+  
+  }
+table td {
+    width: 349px;
+    padding: 10px;
+    vertical-align: top;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+  }
